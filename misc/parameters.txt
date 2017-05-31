@@ -1,0 +1,59 @@
+##########################################
+#            Parameter File              #
+#                                        #
+# format:                                #
+# key: value                             #
+# YOU MUST INCLUDE ONE SPACE AFTER COLON #
+#                                        #
+# empty lines are skipped                #
+# lines begin with pound are comments    #
+#                                        #
+#                                        #
+#             HAVE FUN!!                 #
+##########################################
+
+##### camera related parameters #####
+camera_ax: 525.0
+camera_ay: 525.0
+camera_x0: 319.5
+camera_y0: 239.5
+camera_s: 0.0
+camera_scale: 5000
+min_depth: 0.3
+max_depth: 5.0
+
+
+##### feature extraction & detection #####
+detector: SURF
+descriptor: SURF
+matcher: FLANN
+
+
+##### transformation estimation #####
+min_num_matches: 6
+max_dist_ratio: 10
+min_rot_angle: 0.02
+#min_rot_angle: 0.00
+max_rot_angle: 0.30
+min_trans_dist: 0.02
+#min_trans_dist: 0.00
+max_trans_dist: 0.40
+debug_info_frame: 1
+#pnp_method: EPNP
+
+
+##### odometer & SLAM #####
+grid_size: 0.010
+debug_info_odometer: 1
+robust_kernel_name: Cauchy
+g2o_iterations: 100
+local_vertices: 5
+random_vertices: 10
+show_pose: 1
+show_feature: 1
+interactive: 1
+benchmark_mode: 1
+
+
+
+
