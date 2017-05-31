@@ -2,7 +2,7 @@
 
 A SLAM algorithm written in C++ for ego-motion estimation and environment reconstruction with a RGB-D camera.
 
-Video demostration:
+Video demonstration:
 
 [![YaVO video demo](https://media.giphy.com/media/koiSDVWKM4MBG/giphy.gif)](https://youtu.be/MSN_w3eFP0I)
 
