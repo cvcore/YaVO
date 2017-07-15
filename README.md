@@ -1,5 +1,7 @@
 # Yet another Visual Odometer (YaVO)
 
+![Travis CI Stat](https://travis-ci.org/cvcore/YaVO.svg?branch=master)
+
 A SLAM algorithm written in C++ for ego-motion estimation and environment reconstruction with a RGB-D camera.
 
 Video demonstration:
