@@ -10,7 +10,7 @@ before_install:
   - sudo add-apt-repository ppa:v-launchpad-jochen-sprickerhof-de/pcl -y
   - sudo apt-get update
   # install deps
-  - sudo apt-get install -y libopencv-dev libeigen3-dev libpcl-all
+  - sudo apt-get install -y libopencv3-dev libeigen3-dev libpcl-all
   # manual build and install of g2o
   - git submodule init
   - cd g2o
