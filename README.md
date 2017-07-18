@@ -17,6 +17,7 @@ First, make sure you have the following packages installed:
 * [G2O](https://github.com/RainerKuemmerle/g2o)
 * Eigen 3
 * SuiteSparse
+* Spdlog
 
 Then clone this repo into a local folder. Then run the good 'ol stuff:
 

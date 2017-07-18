@@ -45,6 +45,9 @@ include_directories(${CSPARSE_INCLUDE_DIR})
 #
 #endif()
 
+# Spdlog
+include_directories(${PROJECT_SOURCE_DIR}/spdlog/include)
+
 # paths
 include_directories(${PROJECT_SOURCE_DIR}/include)
 #set the default path for built executables to the "bin" directory
