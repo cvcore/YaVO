@@ -34,7 +34,7 @@ install:
   - cd g2o
   - mkdir build && cd build
   - export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$OPENCV_INSTALL_DIR
-  - cmake -DCMAKE_INSTALL_PREFIX="$G2O_INSTALL_DIR" -DCMAKE_BUILD_TYPE=RELEASE
+  - cmake -DCMAKE_INSTALL_PREFIX="$G2O_INSTALL_DIR" -DCMAKE_BUILD_TYPE=RELEASE ..
   - sudo make install
 
 script:
