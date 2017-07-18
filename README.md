@@ -16,6 +16,7 @@ First, make sure you have the following packages installed:
 * PCL >= 1.8
 * [G2O](https://github.com/RainerKuemmerle/g2o)
 * Eigen 3
+* SuiteSparse
 
 Then clone this repo into a local folder. Then run the good 'ol stuff:
 

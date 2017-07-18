@@ -27,7 +27,7 @@ before_install:
 
 install:
   # install deps
-  - sudo apt-get install -y libopencv-dev libeigen3-dev libpcl-all
+  - sudo apt-get install -y libopencv-dev libeigen3-dev libpcl-all libsuitesparse-dev
   - ./.install-opencv.sh
   # manual build and install of g2o
   - git submodule init
