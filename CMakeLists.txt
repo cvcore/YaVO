@@ -17,7 +17,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS 1)
 list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake_modules)
 
 # for keg-only install of OpenCV 3 on macOS
-find_package(OpenCV 3 REQUIRED HINTS /usr/local/opt/opencv3)
+find_package(OpenCV 3 REQUIRED)
 include_directories(${OPENCV_INCLUDE_DIRS})
 link_directories(${OPENCV_LIBRARY_DIRS})
 add_definitions(${OPENCV_DEFINITIONS})
