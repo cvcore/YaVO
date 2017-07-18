@@ -31,14 +31,10 @@ install:
   - ./.install-opencv.sh
   # manual build and install of g2o
   - git submodule init
-  - cd g2o
-  - mkdir build && cd build
   - export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$OPENCV_INSTALL_DIR
-  - cmake -DCMAKE_INSTALL_PREFIX="$G2O_INSTALL_DIR" -DCMAKE_BUILD_TYPE=RELEASE ..
-  - sudo make install
+  - ./.install-g2o.sh
 
 script:
-  - cd ../../
   - mkdir build && cd build
   - export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$G2O_INSTALL_DIR
   - cmake ..

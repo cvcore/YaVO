@@ -23,7 +23,7 @@ link_directories(${OPENCV_LIBRARY_DIRS})
 add_definitions(${OPENCV_DEFINITIONS})
 
 # PCL
-find_package(PCL 1.8 REQUIRED)
+find_package(PCL 1.7 REQUIRED)
 include_directories(${PCL_INCLUDE_DIRS})
 link_directories(${PCL_LIBRARY_DIRS})
 add_definitions(${PCL_DEFINITIONS})
