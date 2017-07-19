@@ -32,7 +32,7 @@ add_definitions(${PCL_DEFINITIONS})
 find_package(Eigen3 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIR})
 find_package(G2O REQUIRED)
-include_directories(${G2O_LIBRARY})
+include_directories(${G2O_INCLUDE_DIR})
 find_package(CSparse)
 include_directories(${CSPARSE_INCLUDE_DIR})
 
