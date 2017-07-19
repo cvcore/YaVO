@@ -1,5 +1,5 @@
 #!/bin/sh
-set -e
+set -e -u
 
 if [ ! -d "$OPENCV_INSTALL_DIR/lib" ]; then
     wget https://github.com/opencv/opencv/archive/$OPENCV_VERSION.tar.gz -O opencv-$OPENCV_VERSION.tar.gz

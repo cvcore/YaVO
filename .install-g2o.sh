@@ -1,6 +1,6 @@
 #!/bin/sh
 
-set -e
+set -e -u
 
 if [ ! -d "$G2O_INSTALL_DIR/lib" ]; then
     cd g2o/

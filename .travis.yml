@@ -8,16 +8,24 @@ compiler:
 
 env:
   global:
+    # opencv
     - OPENCV_VERSION=3.2.0
     - OPENCV_INSTALL_DIR="$HOME/opencv-$OPENCV_VERSION-install"
+    # g2o
     - G2O_INSTALL_DIR="$HOME/g2o-install"
-    - LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$OPENCV_INSTALL_DIR/lib"
-    - PKG_CONFIG_PATH="$PKG_CONFIG_PATH:$OPENCV_INSTALL_DIR/lib/pkgconfig"
+    # pcl
+    - PCL_VERSION=1.8.0
+    - PCL_INSTALL_DIR="$HOME/pcl-$PCL_VERSION-install"
+    # path
+    - LD_LIBRARY_PATH="$LD_LIBRARY_PATH:$OPENCV_INSTALL_DIR/lib:$G2O_INSTALL_DIR/lib:$PCL_INSTALL_DIR/lib"
+    - PKG_CONFIG_PATH="$PKG_CONFIG_PATH:$OPENCV_INSTALL_DIR/lib/pkgconfig:$PCL_INSTALL_DIR/lib/pkgconfig:$G2O_INSTALL_DIR/lib/pkgconfig"
     - PYTHONPATH="$OPENCV_INSTALL_DIR/lib/python3.6/site-packages"
 
 cache:
   directories:
     - $OPENCV_INSTALL_DIR
+    - $G2O_INSTALL_DIR
+    - $PCL_INSTALL_DIR
   pip: true
   apt: true
 
@@ -27,16 +35,18 @@ before_install:
 
 install:
   # install deps
-  - sudo apt-get install -y libopencv-dev libeigen3-dev libpcl-all libsuitesparse-dev
+  - sudo apt-get install -y libopencv-dev libeigen3-dev libsuitesparse-dev libboost-all-dev libflann-dev libvtk5-dev
+  # opencv
   - ./.install-opencv.sh
-  # manual build and install of g2o
+  # pcl
+  - ./.install-pcl.sh
+  # g2o
   - git submodule init
-  - export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$OPENCV_INSTALL_DIR
+  - export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$OPENCV_INSTALL_DIR:$PCL_INSTALL_DIR
   - ./.install-g2o.sh
 
 script:
   - mkdir build && cd build
   - export G2O_ROOT=$G2O_INSTALL_DIR
-  - export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH
   - cmake ..
   - make
