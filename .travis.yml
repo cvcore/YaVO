@@ -36,6 +36,7 @@ install:
 
 script:
   - mkdir build && cd build
-  - export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH:$G2O_INSTALL_DIR
+  - export G2O_ROOT=$G2O_INSTALL_DIR
+  - export CMAKE_PREFIX_PATH=$CMAKE_PREFIX_PATH
   - cmake ..
   - make

@@ -31,19 +31,21 @@ add_definitions(${PCL_DEFINITIONS})
 # G2O & Friends
 find_package(Eigen3 REQUIRED)
 include_directories(${EIGEN3_INCLUDE_DIR})
-find_library(G2O REQUIRED)
+find_package(G2O REQUIRED)
 include_directories(${G2O_LIBRARY})
 find_package(CSparse)
 include_directories(${CSPARSE_INCLUDE_DIR})
 
-#if(NOT G2O_FOUND)
-#  message(STATUS "System G2O not found! Downloading from source...")
-#
+if(NOT G2O_FOUND)
+  message(STATUS "System G2O not found!")
+#  message(STATUS "Downloading G2O from source!")
 #  project(SUPERBUILD NONE)
 #  include(cmake_modules/superbuild.cmake)
 #  return()
 #
-#endif()
+else()
+  message(STATUS "G2O found! PATH ${G2O_INCLUDE_DIR}")
+endif()
 
 # Spdlog
 include_directories(${PROJECT_SOURCE_DIR}/spdlog/include)
