@@ -1,6 +1,14 @@
 # Yet another Visual Odometer (YaVO)
 
 [![Build Status](https://travis-ci.org/cvcore/YaVO.svg?branch=master)](https://travis-ci.org/cvcore/YaVO)
+[![Release][release-image]][releases]
+[![License][license-image]][license]
+
+[release-image]: https://img.shields.io/badge/release-v0.1-blue.svg?style=flat
+[releases]: https://github.com/cvcore/YaVO/releases
+
+[license-image]: https://img.shields.io/badge/license-BSD-yellow.svg?style=flat
+[license]: https://github.com/cvcore/YaVO/blob/master/LICENSE
 
 A SLAM algorithm written in C++ for ego-motion estimation and environment reconstruction with a RGB-D camera.
 
