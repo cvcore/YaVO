@@ -67,7 +67,8 @@ add_library(RGBDSlam
 target_link_libraries(RGBDSlam
         ${PCL_COMMON_LIBRARIES} ${PCL_IO_LIBRARIES} ${PCL_VISUALIZATION_LIBRARIES} ${PCL_FILTERS_LIBRARIES}
         ${OpenCV_LIBS}
-        g2o_core g2o_types_slam3d g2o_solver_csparse g2o_stuff g2o_csparse_extension ${CSPARSE_LIBRARY})
+        ${G2O_LIBRARIES}
+        ${CSPARSE_LIBRARY})
 
 add_executable(RGBDSlamApp src/rgbd_slam_app.cc)
 target_link_libraries(RGBDSlamApp RGBDSlam)
